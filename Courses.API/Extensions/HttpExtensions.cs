@@ -66,7 +66,7 @@ public static class HttpExtensions
     {
         try
         {
-            if (!db.DeleteAsync<TReferenceEntity, TDto>(dto)) return Results.NotFound();
+            if (!db.Delete<TReferenceEntity, TDto>(dto)) return Results.NotFound();
 
             if (await db.SaveChangesAsync()) return Results.NoContent();
         }
